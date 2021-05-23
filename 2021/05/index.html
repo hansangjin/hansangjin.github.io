@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Clean Code를 읽고 - Last Memory
+    
+  </title>
+
+  <meta name="description" content="Clean Code">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://hansangjin.github.io/2021/05/">
+  <link rel="alternate" type="application/rss+xml" title="Last Memory" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Last Memory</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Clean Code를 읽고</h1>
+            
+            <span class="meta">Posted by
+              <a href="#"></a>
+              on May 23, 2021 &middot; <span class="reading-time" title="Estimated read time">
+  
+   3 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="clean-code">Clean Code</h1>
+
+<h2 id="점진적인-개선">점진적인 개선</h2>
+<p>글쓸 때, 초안을 만든 후, 1차, 2차 … 계속 읽어보고 보정하는 과정을 거치 듯 코드도 동작하는 코드에서 멈추지 말고, Clean code를 목표로 계속 다듬어야한다. 그래야 시간이 지난 후에도 유지보수 하기에 좋은 코드를 만들 수 있다.</p>
+
+<h2 id="테스트">테스트</h2>
+
+<p><strong>TDD (Test Driven Development)</strong></p>
+
+<ul>
+  <li>실패하는 단위 테스트를 작성할 때까지 실제 코드를 작성하지 않는다.</li>
+  <li>컴파일은 실패하지 않으면서 실행이 실패하는 정도로만 단위 테스트를 작성한다.</li>
+  <li>현재 실패하는 코드를 통과할 정도로만 실제 코드를 작성한다.</li>
+</ul>
+
+<p>테스트 코드도 제대로 작성하여, 깨끗한 테스트 코드로 만들어야 한다. 잘 짜여진 테스트 코드는 실제 코드의 유연성, 유지보수성, 재사용성을 보존하고 강화한다.</p>
+
+<p><strong>테스트 코드는</strong></p>
+<ul>
+  <li>Legacy Code를 이해하고 Refactoring 할 수 있는 기회를 준다.</li>
+  <li>실제 코드의 Architecture를 신경쓰게 만들어, 잘 짜여진 코드가 되게 만들어준다.</li>
+  <li>Boundary condition에 대해 고민하게 만들어, 실제 코드에 예외 상황에서의 오류 발생 가능성을 낮추어 준다.</li>
+  <li>외부의 코드에 대한 TC를 작성하면서, 외부 코드에 대한 이해도 증가 뿐 아니라, 분리(Adaptation)작업을 유도해 준다.</li>
+</ul>
+
+<h2 id="규칙">규칙</h2>
+<h3 id="보이스카우트-규칙">보이스카우트 규칙</h3>
+<blockquote>
+  <p>캠핑장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나라.</p>
+</blockquote>
+
+<p>체크아웃할 때보다 좀 더 깨끗한 코드를 체크인 한다면 코드는 절대 나빠지지 않는다.</p>
+
+<h3 id="깨진유리창-법칙-broken-windows-theory">깨진유리창 법칙 (Broken Windows Theory)</h3>
+<blockquote>
+  <p>만일 한 건물의 유리창이 깨어진 채로 방치되어있다면 다른 유리창들도 곧 깨어질 것이라는 데 대해 사회심리학자들과 경찰관들은 동의하곤 한다. 이런 경향은 잘사는 동네에서건 못사는 동네에서건 마찬가지이다. (중략) 한 장의 방치된 깨진 유리창은 아무도 신경쓰지 않는다는 신호이며, 따라서 유리창을 더 깨는 것에 대해 아무런 부담이 없다.</p>
+</blockquote>
+
+<p>깨끗하지 않은, Architecture 적으로 올바르지 않은 코드를 남겨둔다면 새로운 코드를 만들 때 무심코 해당 코드가 검증된 코드로 인식하여 따라하게 된다. 기존 코드도 이랬으니 괜찮다는 생각은 코드의 Quality를 더욱 더 안좋게 만들게 된다. LOC는 계속 커지고, 복잡도는 더욱 더 증가하게 된다.</p>
+
+<h2 id="code-smell">Code smell</h2>
+<p><code class="language-plaintext highlighter-rouge">Refactoring</code> 에서 Code Smell을 맡고 코드를 개선해야 한다고 한다. Clean Code도 마찬가지로 Clean Code Smell을 확인하여 개선해나가야 한다.</p>
+
+<h2 id="code-review시-체크하면-좋은-smell-과-생각">Code Review시 체크하면 좋은 Smell 과 생각</h2>
+<ul>
+  <li>의미 있는 이름을 사용했는지?</li>
+  <li>SRP (Single Responsibility Principle) - 작게, 한가지만 해라! 예측할 수 없게 많은 일을 하는 함수는 오 동작할 가능성도 높다.</li>
+  <li>추상화 수준 맞추기 - Class, Function등을 작성 시, 동일한 추상화 수준에서 작성될 수 있다록 하자. func 1, 2, 3 을 호출 하는 것이 아니라 func 1,2 후 갑자기 detail한 code가 나온 다면 읽기 어려워 진다.</li>
+  <li>Unit TC를 작성했는지 확인하자. 다양한 예외 상황을 고민했는지 체크 할 수 있다.</li>
+  <li>주석 - 코드 자체로 의도를 표현하면 좋으며, history는 git을 통해 알 수 있으므로 불 필요한 주석은 지우자.</li>
+  <li>Design pattern, SW Architecture, Tactic 등 좋은 형식을 알고 생각하고 적용해보자!</li>
+  <li>오류 처리 - null, “” 을 반환 하지 않는 방법을 생각해보자. Unknown class 등 대안은 존재한다.</li>
+  <li>외부 코드는 Adapter, Wrapper를 만들어 코드를 분리시켜 적용하자</li>
+  <li>최신 기술 적용에 주저하지 말자! functional language, Stream, lambda 등 새로운 기술에 반감을 갖기 보다는 배워서 적용해 보자.</li>
+  <li>서로 예의를 갖추어 코드 리뷰하고 토론하자!*</li>
+</ul>
+
+
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2021/05/" data-toggle="tooltip" data-placement="top" title="Clean Blog windows환경에서 설치해보기">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          
+          
+          
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;  2021</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/scripts.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>
