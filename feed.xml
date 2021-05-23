@@ -1,59 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://hansangjin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hansangjin.github.io/" rel="alternate" type="text/html" /><updated>2021-05-23T17:37:04+09:00</updated><id>https://hansangjin.github.io/feed.xml</id><title type="html">Last Memory</title><subtitle>It's time to write something down!</subtitle><entry><title type="html">Clean Code를 읽고</title><link href="https://hansangjin.github.io/2021/05/" rel="alternate" type="text/html" title="Clean Code를 읽고" /><published>2021-05-23T15:40:11+09:00</published><updated>2021-05-23T15:40:11+09:00</updated><id>https://hansangjin.github.io/2021/cleancode</id><content type="html" xml:base="https://hansangjin.github.io/2021/05/">&lt;h1 id=&quot;clean-code&quot;&gt;Clean Code&lt;/h1&gt;
-
-&lt;h2 id=&quot;점진적인-개선&quot;&gt;점진적인 개선&lt;/h2&gt;
-&lt;p&gt;글쓸 때, 초안을 만든 후, 1차, 2차 … 계속 읽어보고 보정하는 과정을 거치 듯 코드도 동작하는 코드에서 멈추지 말고, Clean code를 목표로 계속 다듬어야한다. 그래야 시간이 지난 후에도 유지보수 하기에 좋은 코드를 만들 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;테스트&quot;&gt;테스트&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;TDD (Test Driven Development)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;실패하는 단위 테스트를 작성할 때까지 실제 코드를 작성하지 않는다.&lt;/li&gt;
-  &lt;li&gt;컴파일은 실패하지 않으면서 실행이 실패하는 정도로만 단위 테스트를 작성한다.&lt;/li&gt;
-  &lt;li&gt;현재 실패하는 코드를 통과할 정도로만 실제 코드를 작성한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;테스트 코드도 제대로 작성하여, 깨끗한 테스트 코드로 만들어야 한다. 잘 짜여진 테스트 코드는 실제 코드의 유연성, 유지보수성, 재사용성을 보존하고 강화한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;테스트 코드는&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Legacy Code를 이해하고 Refactoring 할 수 있는 기회를 준다.&lt;/li&gt;
-  &lt;li&gt;실제 코드의 Architecture를 신경쓰게 만들어, 잘 짜여진 코드가 되게 만들어준다.&lt;/li&gt;
-  &lt;li&gt;Boundary condition에 대해 고민하게 만들어, 실제 코드에 예외 상황에서의 오류 발생 가능성을 낮추어 준다.&lt;/li&gt;
-  &lt;li&gt;외부의 코드에 대한 TC를 작성하면서, 외부 코드에 대한 이해도 증가 뿐 아니라, 분리(Adaptation)작업을 유도해 준다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;규칙&quot;&gt;규칙&lt;/h2&gt;
-&lt;h3 id=&quot;보이스카우트-규칙&quot;&gt;보이스카우트 규칙&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;캠핑장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나라.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;체크아웃할 때보다 좀 더 깨끗한 코드를 체크인 한다면 코드는 절대 나빠지지 않는다.&lt;/p&gt;
-
-&lt;h3 id=&quot;깨진유리창-법칙-broken-windows-theory&quot;&gt;깨진유리창 법칙 (Broken Windows Theory)&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;만일 한 건물의 유리창이 깨어진 채로 방치되어있다면 다른 유리창들도 곧 깨어질 것이라는 데 대해 사회심리학자들과 경찰관들은 동의하곤 한다. 이런 경향은 잘사는 동네에서건 못사는 동네에서건 마찬가지이다. (중략) 한 장의 방치된 깨진 유리창은 아무도 신경쓰지 않는다는 신호이며, 따라서 유리창을 더 깨는 것에 대해 아무런 부담이 없다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;깨끗하지 않은, Architecture 적으로 올바르지 않은 코드를 남겨둔다면 새로운 코드를 만들 때 무심코 해당 코드가 검증된 코드로 인식하여 따라하게 된다. 기존 코드도 이랬으니 괜찮다는 생각은 코드의 Quality를 더욱 더 안좋게 만들게 된다. LOC는 계속 커지고, 복잡도는 더욱 더 증가하게 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;code-smell&quot;&gt;Code smell&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Refactoring&lt;/code&gt; 에서 Code Smell을 맡고 코드를 개선해야 한다고 한다. Clean Code도 마찬가지로 Clean Code Smell을 확인하여 개선해나가야 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;code-review시-체크하면-좋은-smell-과-생각&quot;&gt;Code Review시 체크하면 좋은 Smell 과 생각&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;의미 있는 이름을 사용했는지?&lt;/li&gt;
-  &lt;li&gt;SRP (Single Responsibility Principle) - 작게, 한가지만 해라! 예측할 수 없게 많은 일을 하는 함수는 오 동작할 가능성도 높다.&lt;/li&gt;
-  &lt;li&gt;추상화 수준 맞추기 - Class, Function등을 작성 시, 동일한 추상화 수준에서 작성될 수 있다록 하자. func 1, 2, 3 을 호출 하는 것이 아니라 func 1,2 후 갑자기 detail한 code가 나온 다면 읽기 어려워 진다.&lt;/li&gt;
-  &lt;li&gt;Unit TC를 작성했는지 확인하자. 다양한 예외 상황을 고민했는지 체크 할 수 있다.&lt;/li&gt;
-  &lt;li&gt;주석 - 코드 자체로 의도를 표현하면 좋으며, history는 git을 통해 알 수 있으므로 불 필요한 주석은 지우자.&lt;/li&gt;
-  &lt;li&gt;Design pattern, SW Architecture, Tactic 등 좋은 형식을 알고 생각하고 적용해보자!&lt;/li&gt;
-  &lt;li&gt;오류 처리 - null, “” 을 반환 하지 않는 방법을 생각해보자. Unknown class 등 대안은 존재한다.&lt;/li&gt;
-  &lt;li&gt;외부 코드는 Adapter, Wrapper를 만들어 코드를 분리시켜 적용하자&lt;/li&gt;
-  &lt;li&gt;최신 기술 적용에 주저하지 말자! functional language, Stream, lambda 등 새로운 기술에 반감을 갖기 보다는 배워서 적용해 보자.&lt;/li&gt;
-  &lt;li&gt;서로 예의를 갖추어 코드 리뷰하고 토론하자!*&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="sw" /><summary type="html">Clean Code</summary></entry><entry><title type="html">Clean Blog windows환경에서 설치해보기</title><link href="https://hansangjin.github.io/2021/05/" rel="alternate" type="text/html" title="Clean Blog windows환경에서 설치해보기" /><published>2021-05-23T15:40:11+09:00</published><updated>2021-05-23T15:40:11+09:00</updated><id>https://hansangjin.github.io/2021/cleanblog</id><content type="html" xml:base="https://hansangjin.github.io/2021/05/">&lt;h1 id=&quot;clean-blog-windows--bootstrap--jekyll&quot;&gt;Clean Blog (Windows / Bootstrap / Jekyll)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://hansangjin.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hansangjin.github.io/" rel="alternate" type="text/html" /><updated>2021-05-23T18:52:40+09:00</updated><id>https://hansangjin.github.io/feed.xml</id><title type="html">Last Memory</title><subtitle>It's time to write something down!</subtitle><entry><title type="html">Clean Blog windows환경에서 설치해보기</title><link href="https://hansangjin.github.io/2021/05/cleanblog.html" rel="alternate" type="text/html" title="Clean Blog windows환경에서 설치해보기" /><published>2021-05-23T16:40:11+09:00</published><updated>2021-05-23T16:40:11+09:00</updated><id>https://hansangjin.github.io/2021/05/cleanblog</id><content type="html" xml:base="https://hansangjin.github.io/2021/05/cleanblog.html">&lt;h1 id=&quot;clean-blog-windows--bootstrap--jekyll&quot;&gt;Clean Blog (Windows / Bootstrap / Jekyll)&lt;/h1&gt;
 
 &lt;h2 id=&quot;ruby-설치&quot;&gt;Ruby 설치&lt;/h2&gt;
 
@@ -322,4 +267,70 @@ pagination:
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;githubio에-배포하기&quot;&gt;github.io에 배포하기&lt;/h2&gt;
-&lt;p&gt;_site에 생성된 파일을 github folder로 copy한다.&lt;/p&gt;</content><author><name></name></author><category term="blog" /><summary type="html">Clean Blog (Windows / Bootstrap / Jekyll)</summary></entry></feed>
+&lt;p&gt;_site에 생성된 파일을 github folder로 copy한다.&lt;/p&gt;</content><author><name></name></author><summary type="html">Clean Blog (Windows / Bootstrap / Jekyll)</summary></entry><entry><title type="html">Clean Code를 읽고</title><link href="https://hansangjin.github.io/2021/05/cleancode.html" rel="alternate" type="text/html" title="Clean Code를 읽고" /><published>2021-05-23T15:40:11+09:00</published><updated>2021-05-23T15:40:11+09:00</updated><id>https://hansangjin.github.io/2021/05/cleancode</id><content type="html" xml:base="https://hansangjin.github.io/2021/05/cleancode.html">&lt;h1 id=&quot;clean-code&quot;&gt;Clean Code&lt;/h1&gt;
+
+&lt;h2 id=&quot;점진적인-개선&quot;&gt;점진적인 개선&lt;/h2&gt;
+&lt;p&gt;글쓸 때, 초안을 만든 후, 1차, 2차 … 계속 읽어보고 보정하는 과정을 거치 듯 코드도 동작하는 코드에서 멈추지 말고, Clean code를 목표로 계속 다듬어야한다. 그래야 시간이 지난 후에도 유지보수 하기에 좋은 코드를 만들 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;테스트&quot;&gt;테스트&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;TDD (Test Driven Development)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실패하는 단위 테스트를 작성할 때까지 실제 코드를 작성하지 않는다.&lt;/li&gt;
+  &lt;li&gt;컴파일은 실패하지 않으면서 실행이 실패하는 정도로만 단위 테스트를 작성한다.&lt;/li&gt;
+  &lt;li&gt;현재 실패하는 코드를 통과할 정도로만 실제 코드를 작성한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;테스트 코드도 제대로 작성하여, 깨끗한 테스트 코드로 만들어야 한다. 잘 짜여진 테스트 코드는 실제 코드의 유연성, 유지보수성, 재사용성을 보존하고 강화한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;테스트 코드는&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Legacy Code를 이해하고 Refactoring 할 수 있는 기회를 준다.&lt;/li&gt;
+  &lt;li&gt;실제 코드의 Architecture를 신경쓰게 만들어, 잘 짜여진 코드가 되게 만들어준다.&lt;/li&gt;
+  &lt;li&gt;Boundary condition에 대해 고민하게 만들어, 실제 코드에 예외 상황에서의 오류 발생 가능성을 낮추어 준다.&lt;/li&gt;
+  &lt;li&gt;외부의 코드에 대한 TC를 작성하면서, 외부 코드에 대한 이해도 증가 뿐 아니라, 분리(Adaptation)작업을 유도해 준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;규칙&quot;&gt;규칙&lt;/h2&gt;
+&lt;h3 id=&quot;보이스카우트-규칙&quot;&gt;보이스카우트 규칙&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;캠핑장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나라.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;체크아웃할 때보다 좀 더 깨끗한 코드를 체크인 한다면 코드는 절대 나빠지지 않는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;깨진유리창-법칙-broken-windows-theory&quot;&gt;깨진유리창 법칙 (Broken Windows Theory)&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;만일 한 건물의 유리창이 깨어진 채로 방치되어있다면 다른 유리창들도 곧 깨어질 것이라는 데 대해 사회심리학자들과 경찰관들은 동의하곤 한다. 이런 경향은 잘사는 동네에서건 못사는 동네에서건 마찬가지이다. (중략) 한 장의 방치된 깨진 유리창은 아무도 신경쓰지 않는다는 신호이며, 따라서 유리창을 더 깨는 것에 대해 아무런 부담이 없다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;깨끗하지 않은, Architecture 적으로 올바르지 않은 코드를 남겨둔다면 새로운 코드를 만들 때 무심코 해당 코드가 검증된 코드로 인식하여 따라하게 된다. 기존 코드도 이랬으니 괜찮다는 생각은 코드의 Quality를 더욱 더 안좋게 만들게 된다. LOC는 계속 커지고, 복잡도는 더욱 더 증가하게 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-smell&quot;&gt;Code smell&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Refactoring&lt;/code&gt; 에서 Code Smell을 맡고 코드를 개선해야 한다고 한다. Clean Code도 마찬가지로 Clean Code Smell을 확인하여 개선해나가야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-review시-체크하면-좋은-smell-과-생각&quot;&gt;Code Review시 체크하면 좋은 Smell 과 생각&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;의미 있는 이름을 사용했는지?&lt;/li&gt;
+  &lt;li&gt;SRP (Single Responsibility Principle) - 작게, 한가지만 해라! 예측할 수 없게 많은 일을 하는 함수는 오 동작할 가능성도 높다.&lt;/li&gt;
+  &lt;li&gt;추상화 수준 맞추기 - Class, Function등을 작성 시, 동일한 추상화 수준에서 작성될 수 있다록 하자. func 1, 2, 3 을 호출 하는 것이 아니라 func 1,2 후 갑자기 detail한 code가 나온 다면 읽기 어려워 진다.&lt;/li&gt;
+  &lt;li&gt;Unit TC를 작성했는지 확인하자. 다양한 예외 상황을 고민했는지 체크 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;주석 - 코드 자체로 의도를 표현하면 좋으며, history는 git을 통해 알 수 있으므로 불 필요한 주석은 지우자.&lt;/li&gt;
+  &lt;li&gt;Design pattern, SW Architecture, Tactic 등 좋은 형식을 알고 생각하고 적용해보자!&lt;/li&gt;
+  &lt;li&gt;오류 처리 - null, “” 을 반환 하지 않는 방법을 생각해보자. Unknown class 등 대안은 존재한다.&lt;/li&gt;
+  &lt;li&gt;외부 코드는 Adapter, Wrapper를 만들어 코드를 분리시켜 적용하자&lt;/li&gt;
+  &lt;li&gt;최신 기술 적용에 주저하지 말자! functional language, Stream, lambda 등 새로운 기술에 반감을 갖기 보다는 배워서 적용해 보자.&lt;/li&gt;
+  &lt;li&gt;서로 예의를 갖추어 코드 리뷰하고 토론하자!*&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Clean Code</summary></entry><entry><title type="html">The Power of Habit</title><link href="https://hansangjin.github.io/2021/04/thepowerofhabit.html" rel="alternate" type="text/html" title="The Power of Habit" /><published>2021-04-01T21:40:11+09:00</published><updated>2021-04-01T21:40:11+09:00</updated><id>https://hansangjin.github.io/2021/04/thepowerofhabit</id><content type="html" xml:base="https://hansangjin.github.io/2021/04/thepowerofhabit.html">&lt;h1 id=&quot;the-power-of-habit&quot;&gt;The Power Of HABIT&lt;/h1&gt;
+
+&lt;p&gt;That, in some ways, is the point of this book. Perhaps a sleepwalking murderer can plausibly argue he wasn’t aware of his habit, and so he doesn’t bear responsibility for his crime. But almost all the other patterns that exist in most people’s lives how we eat and sleep and talk to our kids, how we unthinkingly spend our time, attention, and money those are habits that we know exist. And once you understand that habits can change, you have the freedom and the responsibility to remake them. Once you understand that habits can be rebuilt, the power of habit becomes easier to grasp, and the only option left is to get to work.&lt;/p&gt;
+
+&lt;h2 id=&quot;wantted&quot;&gt;WANTTED&lt;/h2&gt;
+
+&lt;p&gt;Robot vision
+Python
+Scrapping
+OpenCV
+Architecture
+Digital twin&lt;/p&gt;</content><author><name></name></author><category term="book" /><summary type="html">The Power Of HABIT</summary></entry></feed>
